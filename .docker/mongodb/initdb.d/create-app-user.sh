@@ -11,5 +11,5 @@ if [ "$MONGO_INITDB_USERNAME" ] && [ "$MONGO_INITDB_PASSWORD" ]; then
             pwd: $(_js_escape "$MONGO_INITDB_PASSWORD"),
             roles: [ { role: 'readWrite', db: $(_js_escape "$MONGO_INITDB_DATABASE") } ]
         })
-    EOJS
+EOJS
 fi
