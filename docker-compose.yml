@@ -17,3 +17,15 @@ services:
         ports:
             - "27017:27017"
         command: ["-f", "/etc/mongod.conf"]
+    backend_app:
+        build: .
+        container_name: backend_app
+        hostname: backend_app
+        environment:  
+            MONGODB_URI: mongodb://${MONGO_INITDB_USERNAME}:${MONGO_INITDB_PASSWORD}@mongodb/${MONGO_INITDB_DATABASE}
+        env_file:
+            - .env
+        ports: 
+            - "3000:3000"
+
+
