@@ -23,8 +23,12 @@ services:
         hostname: backend_app
         environment:  
             MONGODB_URI: mongodb://${MONGO_INITDB_USERNAME}:${MONGO_INITDB_PASSWORD}@mongodb/${MONGO_INITDB_DATABASE}
+            NODE_ENV: production
+            SECRET: secret
         env_file:
             - .env
+        depends_on:
+            - mongodb
         ports: 
             - "3000:3000"
 
