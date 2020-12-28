@@ -14,5 +14,7 @@ RUN npm ci
 COPY . .
 #Firewall opening up port 4100
 EXPOSE 3000
+#Set environment variable
+ENV NODE_ENV=production
 # Execution command when you run container 
 CMD [ "node", "./app.js" ] 
